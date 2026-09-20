@@ -1,4 +1,4 @@
-FROM python:3.10 as Builder
+FROM python:3.10@sha256:4379c343a93c87429e0ac3e8e09d073a4ee26084d710ac38b686fa34eed12270 as Builder
 RUN sed -i 's/deb.debian.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list.d/debian.sources && \
     sed -i 's/security.debian.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list.d/debian.sources
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
